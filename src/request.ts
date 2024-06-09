@@ -357,7 +357,7 @@ export class Request extends Macroable {
    * Returns value for a given header key. The default value is
    * used when original value is `undefined`.
    */
-  header(key: string, defaultValue?: any): string | undefined {
+  header<TDefaultValue = undefined>(key: string, defaultValue?: TDefaultValue): string | TDefaultValue {
     key = key.toLowerCase()
     const headers = this.headers()
 
